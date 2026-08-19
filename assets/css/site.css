@@ -1071,13 +1071,13 @@ a { color: var(--cuivre); }
   font-family: var(--titre);
   font-size: 0.84rem;
   letter-spacing: 0.03em;
-  color: #5c4a33;
+  color: #453626;
 }
-.resa .champ label { color: #8a6120; }
+.resa .champ label { color: #7a4f14; }
 .resa .champ input, .resa .champ select {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(70, 46, 20, 0.5);
+  border-bottom: 1px solid rgba(70, 46, 20, 0.65);
   border-radius: 0;
   padding: 0.42rem 0.2rem;
   font-style: italic;

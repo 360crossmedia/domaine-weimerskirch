@@ -133,45 +133,11 @@ function horizon() {
 /* Le vent entre les pièces : au départ vers une autre page, quelques
    feuilles de vigne traversent l'écran, la page part en fondu. */
 function vent() {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const FEUILLE_OR = '%23c49a52', FEUILLE_VERTE = '%23657a44';
-  const feuilleURI = (c) => `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-16 -34 32 36'%3E%3Cpath d='M0 0 C -3 -4 -12 -3 -13 -10 C -19 -11 -19 -19 -14 -21 C -16 -27 -9 -31 -5 -28 C -4 -34 4 -34 5 -28 C 9 -31 16 -27 14 -21 C 19 -19 19 -11 13 -10 C 12 -3 3 -4 0 0 Z' fill='${c}' opacity='0.9'/%3E%3C/svg%3E")`;
-
-  window.envolee = (x, y) => {
-    const x0 = x ?? innerWidth * 0.2, y0 = y ?? innerHeight * 0.5;
-    for (let i = 0; i < 6; i++) {
-      const f = document.createElement('i');
-      const t = 26 + Math.random() * 34;
-      f.className = 'feuille-vent';
-      f.style.cssText = `width:${t}px;height:${t}px;background-image:${feuilleURI(Math.random() > 0.45 ? FEUILLE_OR : FEUILLE_VERTE)};
-        left:${x0 - 20 + Math.random() * 40}px; top:${y0 - 16 + Math.random() * 32}px;
-        --derive:${(Math.random() > 0.5 ? 1 : -1) * (12 + Math.random() * 22)}vh; --tour:${420 + Math.random() * 520}deg;
-        animation-duration:${840 + Math.random() * 460}ms; animation-delay:${Math.random() * 140}ms`;
-      document.body.appendChild(f);
-      setTimeout(() => f.remove(), 1700);
-    }
-  };
-
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href$=".html"], a[href*=".html#"]');
-    if (!a || a.origin !== location.origin) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || a.target) return;
-    if (a.pathname === location.pathname && a.hash) return;
-    e.preventDefault();
-    window.envolee(e.clientX, e.clientY);
-    document.documentElement.classList.add('page-depart');
-    setTimeout(() => { location.href = a.href; }, 620);
-  });
+  /* envolée de feuilles supprimée (retour client) — on garde une fonction
+     inerte pour ne casser aucun appel existant */
+  window.envolee = () => {};
 }
 
-addEventListener('load', () => {
-  const v = document.querySelector('.vigne-lignee');
-  if (v) { v.remove(); vigneLignee(); }
-});
-
-
-/* Le carnet des millésimes : défilement par flèches. */
 function carnet() {
   const livre = document.querySelector('[data-livre]');
   if (!livre || livre.dataset.branche) return;
