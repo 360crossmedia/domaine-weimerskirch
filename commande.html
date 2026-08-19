@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commande — Domaine Weimerskirch</title>
+<meta name="description" content="Récapitulatif du panier, coordonnées et mode de retrait.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400..600;1,400..500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e6b87e'/%3E%3Cpath d='M9 11 L12.4 21.5 L16 13.5 L19.6 21.5 L23 11' fill='none' stroke='%233a2410' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<div class="barre barre--posee" data-barre>
+  <a class="marque" href="index.html">
+    <svg class="marque__sceau" viewBox="0 0 100 100" aria-hidden="true">
+  <defs><radialGradient id="orSceaumarquesceau" cx="34%" cy="28%" r="78%">
+    <stop offset="0%" stop-color="#f2d49c"/><stop offset="45%" stop-color="#e6b87e"/><stop offset="100%" stop-color="#8a5c2c"/>
+  </radialGradient></defs>
+  <circle cx="50" cy="50" r="46" fill="url(#orSceaumarquesceau)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#553a1c" stroke-width="1"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#7a5228" stroke-width="0.7" opacity="0.7"/>
+  <path d="M28 34 L38 66 L50 41 L62 66 L72 34" fill="none" stroke="#3a2410" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
+    <span class="marque__nom">Weimerskirch<span class="marque__lieu">Wormeldange · Moselle</span></span>
+  </a>
+  <button class="bouton-menu" type="button" data-bouton-menu aria-expanded="false" aria-controls="navigation">Menu</button>
+  <nav class="nav" id="navigation" data-nav aria-label="Principale">
+    <a href="index.html">Le domaine</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="histoire.html#carnet" data-va-carnet>Millésimes</a>
+    <a href="vignoble.html">Vignoble</a>
+    <a href="boutique.html">Boutique</a>
+    <a class="nav__panier" href="boutique.html#panier" data-panier-lien data-vide="true">Panier</a>
+    <a class="nav__action" href="reservation.html">Réserver</a>
+  </nav>
+</div>
+<main id="contenu">
+<section class="section" style="padding-top:3rem">
+  <div class="section__contenu">
+    <p class="avant-titre">Commande</p>
+    <h1 style="margin-bottom:2.5rem">Encore <em>deux minutes.</em></h1>
+
+    <div data-commande-vide hidden style="max-width:52ch">
+      <p class="sourdine">Le panier est vide. La boutique est à un pas.</p>
+      <p style="margin-top:1.4rem"><a class="bouton--plein" href="boutique.html">Ouvrir la boutique</a></p>
+    </div>
+
+    <div class="commande" data-commande>
+      <form class="formulaire" data-form-commande novalidate>
+        <div class="resa__etape">
+          <p class="avant-titre">1 · Retrait ou livraison</p>
+          <div class="choix">
+            <label><input type="radio" name="mode" value="enlevement" checked>
+              <span><b>Enlèvement au domaine — gratuit</b>
+              <small>Du mardi au samedi, on vous prévient quand c'est prêt.</small></span></label>
+            <label><input type="radio" name="mode" value="livraison">
+              <span><b>Livraison Benelux — 12 €, offerte dès 120 €</b>
+              <small>Colis de six, expédition sous quatre jours ouvrés.</small></span></label>
+          </div>
+        </div>
+
+        <div class="resa__etape">
+          <p class="avant-titre">2 · Coordonnées</p>
+          <div class="champ--deux">
+            <div class="champ"><label for="prenom">Prénom</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
+            <div class="champ"><label for="nom">Nom</label><input id="nom" name="nom" autocomplete="family-name" required></div>
+          </div>
+          <div class="champ" style="margin-top:1.4rem"><label for="courriel">Courriel</label><input type="email" id="courriel" name="courriel" autocomplete="email" required></div>
+          <div class="champ" data-champ-adresse style="margin-top:1.4rem" hidden><label for="adresse">Adresse de livraison</label><textarea id="adresse" name="adresse" style="min-height:5rem"></textarea></div>
+          <div class="champ" style="margin-top:1.4rem"><label for="note">Un mot pour la cave <span style="opacity:.5;letter-spacing:0">(facultatif)</span></label><input id="note" name="note"></div>
+        </div>
+
+        <button class="bouton--plein" type="submit">Confirmer la commande</button>
+        <p class="sourdine" style="font-size:0.82rem">Démo : rien n'est débité, rien n'est envoyé. En production,
+        la confirmation part par mail avec l'IBAN du domaine ou un lien Payconiq.</p>
+      </form>
+
+      <aside class="recap" data-recap aria-label="Récapitulatif">
+        <h2>Votre cave</h2>
+        <div data-recap-lignes></div>
+        <div class="recap__ligne"><span>Sous-total</span><output data-recap-soustotal></output></div>
+        <div class="recap__ligne"><span data-recap-mode-txt>Enlèvement au domaine</span><output data-recap-port>0 €</output></div>
+        <div class="recap__total"><span>Total</span><output data-recap-total></output></div>
+      </aside>
+    </div>
+
+    <div class="confirmation" data-confirmation hidden style="max-width:560px;margin-top:1rem">
+      <img class="cachet" src="assets/img/sceau-cire.png" alt="">
+      <h2>Commande <em>enregistrée.</em></h2>
+      <p class="confirmation__ref" data-confirmation-ref></p>
+      <p class="sourdine" style="margin-inline:auto;max-width:42ch">Un récapitulatif arriverait par mail avec
+      l'IBAN du domaine. Les bouteilles attendent au frais, elles savent faire.</p>
+      <p style="margin-top:1.6rem"><a class="lien" href="index.html">Retour au domaine</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="pied__sceau"><svg class="" viewBox="0 0 100 100" aria-hidden="true">
+  <defs><radialGradient id="orSceau" cx="34%" cy="28%" r="78%">
+    <stop offset="0%" stop-color="#f2d49c"/><stop offset="45%" stop-color="#e6b87e"/><stop offset="100%" stop-color="#8a5c2c"/>
+  </radialGradient></defs>
+  <circle cx="50" cy="50" r="46" fill="url(#orSceau)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#553a1c" stroke-width="1"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#7a5228" stroke-width="0.7" opacity="0.7"/>
+  <path d="M28 34 L38 66 L50 41 L62 66 L72 34" fill="none" stroke="#3a2410" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></div>
+  <p class="pied__nom">Weimerskirch</p>
+  <p class="pied__adresse">12, rue de la Moselle · L-5480 Wormeldange-Haut · Luxembourg<br>
+  <a href="tel:+352123456">+352 12 34 56</a> · <a href="mailto:bonjour@domaine-weimerskirch.lu">bonjour@domaine-weimerskirch.lu</a></p>
+  <nav class="pied__nav" aria-label="Pied de page">
+    <a href="index.html">Le domaine</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="vignoble.html">Vignoble</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="reservation.html">Réserver</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions.html">Mentions</a>
+  </nav>
+  <p class="pied__mention">© 2026 Domaine Weimerskirch — domaine fictif, squelette de démonstration 360Crossmedia.<br>
+  L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+</footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/boutique.js"></script>
+</body>
+</html>

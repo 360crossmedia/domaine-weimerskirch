@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Domaine Weimerskirch</title>
+<meta name="description" content="Une question, une commande particulière, un vieux millésime : écrivez, Anne ou Tom répond sous deux jours ouvrés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400..600;1,400..500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e6b87e'/%3E%3Cpath d='M9 11 L12.4 21.5 L16 13.5 L19.6 21.5 L23 11' fill='none' stroke='%233a2410' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="saut-contenu" href="#contenu">Aller au contenu</a>
+
+<div class="barre" data-barre>
+  <a class="marque" href="index.html">
+    <svg class="marque__sceau" viewBox="0 0 100 100" aria-hidden="true">
+  <defs><radialGradient id="orSceaumarquesceau" cx="34%" cy="28%" r="78%">
+    <stop offset="0%" stop-color="#f2d49c"/><stop offset="45%" stop-color="#e6b87e"/><stop offset="100%" stop-color="#8a5c2c"/>
+  </radialGradient></defs>
+  <circle cx="50" cy="50" r="46" fill="url(#orSceaumarquesceau)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#553a1c" stroke-width="1"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#7a5228" stroke-width="0.7" opacity="0.7"/>
+  <path d="M28 34 L38 66 L50 41 L62 66 L72 34" fill="none" stroke="#3a2410" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
+    <span class="marque__nom">Weimerskirch<span class="marque__lieu">Wormeldange · Moselle</span></span>
+  </a>
+  <button class="bouton-menu" type="button" data-bouton-menu aria-expanded="false" aria-controls="navigation">Menu</button>
+  <nav class="nav" id="navigation" data-nav aria-label="Principale">
+    <a href="index.html">Le domaine</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="histoire.html#carnet" data-va-carnet>Millésimes</a>
+    <a href="vignoble.html">Vignoble</a>
+    <a href="boutique.html">Boutique</a>
+    <a class="nav__panier" href="boutique.html#panier" data-panier-lien data-vide="true">Panier</a>
+    <a class="nav__action" href="reservation.html">Réserver</a>
+  </nav>
+</div>
+<header class="entree entree--page" id="contenu">
+  <div class="entree__dire">
+    <p class="avant-titre" data-lever>Contact</p>
+    <h1 data-lever="2">Une vraie personne<br><em>vous répond.</em></h1>
+    <p class="entree__sous" data-lever="3">Pour les visites, passez plutôt par la réservation en ligne.</p>
+  </div>
+  <figure class="vue" data-apparait>
+    <img src="assets/img/moselle.jpg" alt="La Moselle et ses coteaux de vigne." fetchpriority="high">
+    <figcaption>La Moselle au pied du coteau</figcaption>
+  </figure>
+</header>
+
+<section class="section">
+  <div class="section__contenu duo" style="align-items:start">
+    <div data-apparait>
+      <p class="avant-titre">Écrire</p>
+      <h2>Dites ce que <em>vous cherchez.</em></h2>
+      <p class="sourdine" style="margin-bottom:2rem">Une question, un vieux millésime, une commande
+      particulière : c'est Anne ou Tom qui répond, sous deux jours ouvrés.</p>
+
+      <form class="formulaire" data-formulaire novalidate>
+        <div class="champ--deux">
+          <div class="champ"><label for="nom">Nom</label><input type="text" id="nom" name="nom" autocomplete="name" required></div>
+          <div class="champ"><label for="courriel">Courriel</label><input type="email" id="courriel" name="courriel" autocomplete="email" required></div>
+        </div>
+        <div class="champ"><label for="objet">Objet</label>
+          <select id="objet" name="objet">
+            <option>Demander un vieux millésime</option>
+            <option>Commande particulière</option>
+            <option>Restaurant ou caviste</option>
+            <option>Autre chose</option>
+          </select>
+        </div>
+        <div class="champ"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <button class="bouton--plein" type="submit">Envoyer</button>
+        <p data-retour hidden class="sourdine"></p>
+      </form>
+    </div>
+
+    <div data-apparait>
+      <p class="avant-titre">Venir</p>
+      <h2>En haut du village, <em>après l'église.</em></h2>
+      <p>Domaine Weimerskirch<br>12, rue de la Moselle<br>L-5480 Wormeldange-Haut, Luxembourg</p>
+      <p class="sourdine">Vingt-cinq minutes de Luxembourg-Ville par la N1, quarante de Trèves.
+      Suivez la rue jusqu'à ce qu'elle cesse d'être goudronnée.</p>
+      <p class="sourdine">Pendant les vendanges, de fin septembre à début novembre, on ne reçoit
+      pas — et on ne répond pas non plus au téléphone.</p>
+      <p style="margin-top:1.6rem"><a class="lien" href="tel:+352123456" style="margin-top:0">+352 12 34 56</a><br>
+      <a class="lien" href="mailto:bonjour@domaine-weimerskirch.lu">bonjour@domaine-weimerskirch.lu</a></p>
+      <p style="margin-top:2rem"><a class="bouton" href="reservation.html">Réserver une visite</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="pied">
+  <div class="pied__sceau"><svg class="" viewBox="0 0 100 100" aria-hidden="true">
+  <defs><radialGradient id="orSceau" cx="34%" cy="28%" r="78%">
+    <stop offset="0%" stop-color="#f2d49c"/><stop offset="45%" stop-color="#e6b87e"/><stop offset="100%" stop-color="#8a5c2c"/>
+  </radialGradient></defs>
+  <circle cx="50" cy="50" r="46" fill="url(#orSceau)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#553a1c" stroke-width="1"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#7a5228" stroke-width="0.7" opacity="0.7"/>
+  <path d="M28 34 L38 66 L50 41 L62 66 L72 34" fill="none" stroke="#3a2410" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></div>
+  <p class="pied__nom">Weimerskirch</p>
+  <p class="pied__adresse">12, rue de la Moselle · L-5480 Wormeldange-Haut · Luxembourg<br>
+  <a href="tel:+352123456">+352 12 34 56</a> · <a href="mailto:bonjour@domaine-weimerskirch.lu">bonjour@domaine-weimerskirch.lu</a></p>
+  <nav class="pied__nav" aria-label="Pied de page">
+    <a href="index.html">Le domaine</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="vignoble.html">Vignoble</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="reservation.html">Réserver</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions.html">Mentions</a>
+  </nav>
+  <p class="pied__mention">© 2026 Domaine Weimerskirch — domaine fictif, squelette de démonstration 360Crossmedia.<br>
+  L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+</footer>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
